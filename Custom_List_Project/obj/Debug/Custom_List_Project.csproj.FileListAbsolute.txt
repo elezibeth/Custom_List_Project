@@ -1,0 +1,7 @@
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\bin\Debug\Custom_List_Project.exe.config
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\bin\Debug\Custom_List_Project.exe
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\bin\Debug\Custom_List_Project.pdb
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\obj\Debug\Custom_List_Project.csprojAssemblyReference.cache
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\obj\Debug\Custom_List_Project.csproj.CoreCompileInputs.cache
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\obj\Debug\Custom_List_Project.exe
+C:\Users\elezibeth\source\repos\Custom_List_Project\Custom_List_Project\obj\Debug\Custom_List_Project.pdb

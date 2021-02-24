@@ -1,0 +1,2 @@
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.csprojAssemblyReference.cache
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.csproj.CoreCompileInputs.cache
