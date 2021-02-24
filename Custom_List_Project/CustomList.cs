@@ -19,7 +19,7 @@ namespace Custom_List_Project
 
             capacity = 4;
             _items = new T[capacity];
-            count = _items.Length;//method get length
+            count = 0;//method get length
 
         }
 
