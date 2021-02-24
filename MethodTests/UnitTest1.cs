@@ -7,7 +7,7 @@ namespace MethodTests
     [TestClass]
     public class UnitTest1
     {
-        [
+        
         
             [TestMethod]
             public void ConfrimCapacityIncrease()
@@ -35,7 +35,7 @@ namespace MethodTests
                 list.Add(1);
                 // At this point - Count: 5, Capacity: 8
                 // Capacity is the property that we use to check the internal array size
-                int actual = list.Capacity;
+                int actual = list.capacity;//capacity method
 
                 //Assert
                 Assert.AreNotEqual(expected, actual);
@@ -52,7 +52,7 @@ namespace MethodTests
                 list.Add(3);//3rd item
                 list.Add(2);//4th item
                 list.Add(88);//5th item, over capacity, new array created.
-                int actual = list[4];
+                int actual = list._items[4];
                 //This test checks for that; initially the capacity is eight, 
                 //when we add the fifth item, and it is transfered, the capacity should double; if it did not increment, we would not have a value at [4].
 
@@ -67,7 +67,7 @@ namespace MethodTests
                 int expected = 1;
                 //Action
                 list.Add(4);
-                int actual = list.Count;
+                int actual = list.count;
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -85,10 +85,12 @@ namespace MethodTests
                 list.Add(4);
                 list.Add(4);
                 list.Add(4);
-                int actual = list.Count;
+                int actual = list.count;
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
+
+        /// 
 
     }
         

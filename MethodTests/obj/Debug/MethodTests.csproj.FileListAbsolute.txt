@@ -1,2 +1,17 @@
 C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.csprojAssemblyReference.cache
 C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.csproj.CoreCompileInputs.cache
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\MethodTests.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\MethodTests.pdb
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Custom_List_Project.exe
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Custom_List_Project.pdb
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Custom_List_Project.exe.config
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.csproj.CopyComplete
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.dll
+C:\Users\elezibeth\source\repos\Custom_List_Project\MethodTests\obj\Debug\MethodTests.pdb
