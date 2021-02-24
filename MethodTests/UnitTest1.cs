@@ -156,6 +156,72 @@ namespace MethodTests
         //    //Assert
         //    Assert.AreEqual(expected, actual);
         //}
+        //remove tests
+
+        [TestMethod]
+
+        public void TestCountAfterItemRemoved()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 0;
+
+
+            list.Add(4);
+            list.Remove(4);
+            int actual = list.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IndexContentAtIndexRemoved()
+        {
+            CustomList<string> list = new CustomList<string>();
+            string expected = "Nice";
+
+            list.Add("hello");
+            list.Add("Nice");
+            list.Add("See");
+            list.Remove("hello");
+            string actual = list[0];
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCapacityAfterItemsRemoved()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 8;
+
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            //capacity should increase to 8
+            list.Add(5);
+            list.Remove(4);
+            //capacity should not decrease
+            int actual = list.capacity;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CountDecreasesWhenItemsRemoved()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 4;
+
+            list.Add(4);
+            list.Add(5);
+            list.Add(7);
+            list.Add(8);
+            list.Add(9);
+            list.Remove(7);
+            int actual = list.Count;
+
+            Assert.AreEqual(expected, actual);
+
+        }
         
 
     }
