@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Custom_List_Project
 {
-    public class CustomList<T>
+    public class CustomList<T> where T : struct
     {
         //Member variables has a 
         public int count;
@@ -19,19 +19,26 @@ namespace Custom_List_Project
 
             capacity = 4;
             _items = new T[capacity];
-            count = 0;//method get length
+            count = 0;
 
         }
 
         //Methods can do
         public void Add(T item)
         {
-            
+
+            ResizeArray();
+            count = count + 1;
+            _items[count] = item;
+
+        }
+        public void ResizeArray()
+        {
             if (count >= capacity)
             {
                 int newCapacity = capacity * 2;
                 T[] tempArray = new T[newCapacity];
-                foreach (T iTem in _items)
+                foreach (T item in _items)
                 {
                     for (int i = 0; i <= count; i++)
                     {
@@ -41,9 +48,6 @@ namespace Custom_List_Project
                 _items = tempArray;
                 capacity = newCapacity;
             }
-            count = count++;
-            _items[count] = item;
-
         }
     }
 }
