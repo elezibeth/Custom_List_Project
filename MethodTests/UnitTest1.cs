@@ -67,7 +67,7 @@ namespace MethodTests
             int expected = 1;
                 //Action
                 list.Add(4);
-            int actual = list.count;
+            int actual = list.Count;
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -85,7 +85,7 @@ namespace MethodTests
             list.Add(4);
             list.Add(4);
             list.Add(4);
-            int actual = list.count;
+            int actual = list.Count;
                 //Assert
                 Assert.AreEqual(expected, actual);
         }
@@ -117,7 +117,46 @@ namespace MethodTests
             Assert.AreEqual(expected, actual);
         }
 
-        /// 
+        /// Count property tests
+        [TestMethod]
+        public void CountisAProperty()
+        {
+            //Assemble
+            CustomList<int> list = new CustomList<int>();
+            int expected = 1;
+
+            //Action
+            list.Add(3);
+            
+            int actual = list.Count;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //[TestMethod]
+        //public void CountPropertyIsReadOnly()
+        //{
+        //    //Assemble
+        //    CustomList<int> list = new CustomList<int>();
+        //    int expected = 1;
+
+        //    //Action
+        //    list.Count = 4;
+                
+
+            
+
+        //    int actual = list.Count;
+
+
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        
 
     }
         
