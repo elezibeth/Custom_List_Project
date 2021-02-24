@@ -89,6 +89,33 @@ namespace MethodTests
                 //Assert
                 Assert.AreEqual(expected, actual);
         }
+        
+        [TestMethod]
+        public void TestTwoCapacityIncreasesForAccurateTranfer()
+        {
+            //Arrange
+            CustomList<bool> list = new CustomList<bool>();
+            bool expected = false;
+
+            //Action
+            list.Add(true);
+            list.Add(false);//expected at recall
+            list.Add(true);
+            list.Add(false);
+            //first capacity increase next
+            list.Add(true);
+            list.Add(false);
+            list.Add(true);
+            list.Add(false);
+            //second capacity increase next
+            list.Add(true);
+            list.Add(false);
+            list.Add(true);
+            list.Add(false);//12th item at index 11 on list._items
+            bool actual = list._items[1];
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         /// 
 
