@@ -38,7 +38,7 @@ namespace MethodTests
             int actual = list.capacity;//capacity method
 
             //Assert
-            Assert.AreNotEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
             }
         [TestMethod]
             public void TestForItemsAtNewCapacityLevel()

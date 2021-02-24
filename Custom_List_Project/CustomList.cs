@@ -29,7 +29,7 @@ namespace Custom_List_Project
 
             ResizeArray();
             count = count + 1;
-            _items[count] = item;
+            _items[count - 1] = item;
 
         }
         public void ResizeArray()
@@ -38,13 +38,13 @@ namespace Custom_List_Project
             {
                 int newCapacity = capacity * 2;
                 T[] tempArray = new T[newCapacity];
-                foreach (T item in _items)
+
+
+                for (int i = 0; i <= (count - 1); i++)
                 {
-                    for (int i = 0; i <= count; i++)
-                    {
-                        tempArray[i] = _items[i];
-                    }
+                    tempArray[i] = _items[i];
                 }
+
                 _items = tempArray;
                 capacity = newCapacity;
             }
