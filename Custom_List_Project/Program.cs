@@ -17,19 +17,10 @@ namespace Custom_List_Project
             list.Add(2);
             list.Add(3);
             list.Add(4);
-            Console.WriteLine(list._items[0]);
-            Console.WriteLine(list._items[1]);
-            Console.WriteLine(list._items[2]);
-            Console.WriteLine(list._items[3]);
-            Console.WriteLine(list._items[4]);
+            
 
-
-
-            list.Remove(3);
-            Console.WriteLine(list._items[0]);
-            Console.WriteLine(list._items[1]);
-            Console.WriteLine(list._items[2]);
-            Console.WriteLine(list._items[3]);
+            list[0] = 999999;
+            Console.WriteLine(list[0]);
 
 
             Console.ReadLine();

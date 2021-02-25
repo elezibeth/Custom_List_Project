@@ -6,28 +6,34 @@ using System.Threading.Tasks;
 
 namespace Custom_List_Project
 {
-    public class CustomList<T> : IEnumerable<>
+    public class CustomList<T> 
     {
         //Member variables has a 
         private int count = 0;
         public int capacity;
-        public T[] _items;
+        private T[] _items;
         public int Count => count;
         private int location;
-
-        
-        
-      
-     
-
-
-        // A read-only static property:
-        // public static int Counter => _counter;
+        public T this[int i]
+        {
+            get { return _items[i]; }
+            set { _items[i] = value; }
+        }
+    
 
 
 
-        //CTOR is a
-        public CustomList()
+
+
+
+
+    // A read-only static property:
+    // public static int Counter => _counter;
+
+
+
+    //CTOR is a
+    public CustomList()
         {
 
             capacity = 4;
@@ -138,14 +144,14 @@ namespace Custom_List_Project
           
             
         }
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-        public override  GetEnumrable()
-        {
-            yield return 
-        }
+        //public override string ToString()
+        //{
+        //    return base.ToString();
+        //}
+        //public IEnumerator<T> GetEnumerator()
+        //{
+        //    yeild return 
+        //}
        
     }
 }
