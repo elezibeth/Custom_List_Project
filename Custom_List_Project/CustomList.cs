@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Custom_List_Project
 {
-    public class CustomList<T> where T : struct /*: IEnumerator*/
+    public class CustomList<T> /*: IEnumerator Iennumable*/
     {
         //Member variables has a 
         private int count = 0;
         public int capacity;
         public T[] _items;
         public int Count => count;
+        private int location;
+
+        
+        
       
      
 
@@ -43,13 +47,13 @@ namespace Custom_List_Project
         }
         public void ResizeArray()
         {
-            if (Count >= capacity)
+            if (count == capacity)
             {
                 int newCapacity = capacity * 2;
                 T[] tempArray = new T[newCapacity];
 
 
-                for (int i = 0; i <= (Count - 1); i++)
+                for (int i = 0; i <= (count - 1); i++)
                 {
                     tempArray[i] = _items[i];
                 }
@@ -57,7 +61,7 @@ namespace Custom_List_Project
                 _items = tempArray;
                 capacity = newCapacity;
             }
-            
+
             //public IEnumerator GetEnumerator() from lecture
             //{
             //    for(int i = 0; i < count; i++)
@@ -65,6 +69,78 @@ namespace Custom_List_Project
             //        yield return 
             //    }
             //}
-    }
+        }
+        //remove method
+        public void Remove(T item)
+        {
+            //find item in array to remove
+            T[] tempArray = _items;
+            
+
+            //copy to temp array
+            //convert to string for each loop on temp array, use case statements
+           
+
+            //if item matches item, return index number of array case 
+            int indexNumber = -1;
+
+            FindIndexOfItem(item);
+
+            //store variable
+            //temp array
+            //copy from index zero to variable containing index # - 1;
+            
+            
+
+
+            for (int i = 0; i <= (location - 1); i++)
+            {
+                tempArray[i] = _items[i];
+            }
+
+            for (int i = (location + 1); i <= (count - 1); i++)
+            {
+                tempArray[i - 1] = _items[i];
+            }
+
+            count = count - 1;
+
+            _items = tempArray;
+
+
+            // copy from index variable +1 to count -1;
+            //_items = temp array
+
+
+
+        }
+
+        public void FindIndexOfItem(T item)
+        {
+            string[] stringArray = new string[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                string stringOne = Convert.ToString(_items[i]);
+                stringArray[i] = stringOne;
+            }
+            string itemString = Convert.ToString(item);
+            //first in last out
+            for(int i = count; i >= 1; i--)
+            {
+                if(stringArray[i] == itemString)
+                {
+                    location = i;
+                }
+                
+               
+            }
+
+          
+            
+        }
     }
 }
+//   if ((Convert.ToString(item)) == stringArray[i])
+//{
+//    return i;
+//}
