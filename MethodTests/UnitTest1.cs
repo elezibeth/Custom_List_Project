@@ -679,6 +679,22 @@ namespace MethodTests
         {
 
         }
+        [TestMethod]
+        public void ToStringMethod()
+        {
+
+        }
+        [TestMethod]
+        public void CapacityIsAProperty()
+        {
+            CustomList<char> list = new CustomList<char>();
+            int expected = 1;
+
+            list.Add(I);
+            int actual = list.Capacity;
+
+            Assert.AreEqual(expected, actual);
+        }
         
 
 

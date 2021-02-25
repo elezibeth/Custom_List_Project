@@ -13,6 +13,7 @@ namespace Custom_List_Project
         public int capacity;
         private T[] _items;
         public int Count => count;
+        public int Capacity => capacity;
         private int location;
         public T this[int i]
         {
