@@ -590,7 +590,7 @@ namespace MethodTests
             string actual = listThree.ToString();
 
             //Assert
-            Assert.AreEqual(expected, actual)
+            Assert.AreEqual(expected, actual);
         }
         //zip twice,  test capacity
         [TestMethod]
@@ -625,6 +625,56 @@ namespace MethodTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        //indexer tests
+        //retrieve
+        //add
+        //remove
+        [TestMethod]
+        public void Indexer_GetAt()
+        {
+            CustomList<bool> list = new CustomList<bool>();
+            bool expected = false;
+
+
+            list.Add(true);
+            list.Add(false);
+            list.Add(true);
+            bool actual = list[1];
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Indexer_AddAt()
+        {
+            CustomList<char> list = new CustomList<char>();
+            char expected = a;
+
+
+            list.Add(a);
+            list.Add(c);
+            list.Add(d);
+            list[1] = a;
+            char actual = list[1];
+
+            Assert.AreEqual(expected, actual);
+        }
+        public void Indexer_RemoveAt()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 7;
+
+
+            list.Add(3);
+            list.Add(5);
+            list.Add(7);
+            list.Remove(list[1]);//filo, may fail
+            int actual = list[1];
+
+            Assert.AreEqual(expected, actual);
+        }
+        //iterable
+
+
     }
         
 }

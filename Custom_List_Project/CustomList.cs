@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Custom_List_Project
 {
-    public class CustomList<T> /*: IEnumerator Iennumable*/
+    public class CustomList<T> : IEnumerable<>
     {
         //Member variables has a 
         private int count = 0;
@@ -142,6 +142,11 @@ namespace Custom_List_Project
         {
             return base.ToString();
         }
+        public override  GetEnumrable()
+        {
+            yield return 
+        }
+       
     }
 }
 //   if ((Convert.ToString(item)) == stringArray[i])
