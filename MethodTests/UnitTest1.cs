@@ -222,8 +222,409 @@ namespace MethodTests
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        public void RemovesOnlyOneInstance()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 1;
+
+
+            list.Add(9);
+            list.Add(9);
+            list.Remove(9);
+            int actual = list.Count;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        //test indexer
+        //add, remove, retrieve at
+
+        [TestMethod]
+        public void AddAtIndexNumber()
+        {
+
+        }
+
+        [TestMethod]
+        public void RemoveAtIndexNumber()
+        {
+
+        }
+        [TestMethod]
+        public void RetrieveAtIndexNumber()
+        {
+
+
+        }
+        //overload + / - operators
+
+        [TestMethod]
+        public void TestOverloadPlusOperator()
+        {
+            //Arrange
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            int expected = 3;
+
+
+
+            //Action
+            listOne.Add(1);
+            listOne.Add(3);
+            listOne.Add(4);
+
+            listTwo.Add(8);
+            listTwo.Add(7);
+            listTwo.Add(5);
+
+            listThree = listTwo + listOne;
+            int actual = listThree[4];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
+
+        [TestMethod]
+        public void TestMinusOverloadOperator()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
+            CustomList<string> listThree = new CustomList<string>();
+            CustomList<string> listFour = new CustomList<string>();
+            
+
+            //Action
+            listOne.Add("Hello");
+            listOne.Add("Hi");
+            listOne.Add("Hey");
+
+            listTwo.Add("What's up?");
+            listTwo.Add("How are you?");
+            listTwo.Add("How's it goin'?");
+
+            listThree = listTwo + listOne;
+            listFour = listThree - listTwo;
+            string actual = listFour[4];
+
+
+            Assert.IsNull(actual);
+
+        }
+        [TestMethod]
+        public void TestAssignmentOperatorWithOverloadOperator()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
+            CustomList<string> listThree = new CustomList<string>();
+            
+
+
+            //Action
+            listOne.Add("Hello");
+            listOne.Add("Hi");
+            listOne.Add("Hey");
+
+            listTwo.Add("What's up?");
+            listTwo.Add("How are you?");
+            listTwo.Add("How's it goin'?");
+
+            listThree = listTwo + listOne;
+            listThree -= listTwo;
+            string actual = listThree[4];
+
+
+            Assert.IsNull(actual);
+
+        }
+        //capacity increase
+        [TestMethod]
+        public void TestCapacityIncrease()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
+            CustomList<string> listThree = new CustomList<string>();
+            int expected = 8;
+
+
+            //Action
+            listOne.Add("Hello");
+            listOne.Add("Hi");
+            listOne.Add("Hey");
+
+            listTwo.Add("What's up?");
+            listTwo.Add("How are you?");
+            listTwo.Add("How's it goin'?");
+
+            listThree = listTwo + listOne;
+
+            int actual = listThree.Capacity;
+
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        //count increase
+        [TestMethod]
+        public void TestAssignmentOperatorWithOverloadOperator()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
+            CustomList<string> listThree = new CustomList<string>();
+            int expected = 6;
+
+
+            //Action
+            listOne.Add("Hello");
+            listOne.Add("Hi");
+            listOne.Add("Hey");
+
+            listTwo.Add("What's up?");
+            listTwo.Add("How are you?");
+            listTwo.Add("How's it goin'?");
+
+            listThree = listTwo + listOne;
+            int actual = listThree.Count;
+
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        //entire list plus operator
+        public void TestOverloadPlusOperatorList()
+        {
+            //Arrange
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            CustomList<int> listFour = new CustomList<int>();
+
+            int expected = listFour.ToString();
+
+
+
+            //Action
+            listOne.Add(1);
+            listOne.Add(3);
+            listOne.Add(4);
+
+            listTwo.Add(8);
+            listTwo.Add(7);
+            listTwo.Add(5);
+
+            listFour.Add(8);
+            listFour.Add(7);
+            listFour.Add(5);
+            listFour.Add(1);
+            listFour.Add(3);
+            listFour.Add(4);
+
+            listThree = listTwo + listOne;
+            int actual = listThree.ToString();
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+
+        }
+        //entire list - operator
+        [TestMethod]
+        public void TestMinusOverloadOperatorList()
+        {
+            //Arrange
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            CustomList<int> listFour = new CustomList<int>();
+
+            expected = listTwo.ToString();
+
+
+
+            //Action
+            listOne.Add(1);
+            listOne.Add(3);
+            listOne.Add(4);
+
+            listTwo.Add(8);
+            listTwo.Add(7);
+            listTwo.Add(5);
+
         
 
+            listThree = listTwo + listOne;
+            listFour = listThree - listOne;
+            actual = listFour.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+
+
+        //zipper tests
+        //capacity increases
+        [TestMethod]
+        public void TestZipperCapacityIncrease()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            int expected = 8;
+
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree.Zip(listOne, listTwo);
+            int actual = listThree.capacity;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //item at even  index test
+        [TestMethod]
+        public void TestZipperAtEvenIndex()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            int expected = 2;
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree.Zip(listOne, listTwo);
+            int actual = listThree[2];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        //item at odd index test
+        [TestMethod]
+        public void TestZipperAtOddIndex()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            int expected = 3;
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree.Zip(listOne, listTwo);
+            string actual = listThree[3];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        //count increase
+        [TestMethod]
+        public void TestZipperCountIncrease()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            int expected = 6;
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree.Zip(listOne, listTwo);
+            int actual = listThree.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        //entire list comparer
+        [TestMethod]
+        public void TestZipperEntireListCompare()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            CustomList<int> listFour = new CustomList<int>();
+            string expected = listFour.ToString();
+
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree.Zip(listOne, listTwo);
+            listFour.Add(0);
+            listFour.Add(1);
+            listFour.Add(2);
+            listFour.Add(3);
+            listFour.Add(4);
+            listFour.Add(5);
+            string actual = listThree.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual)
+        }
+        //zip twice,  test capacity
+        [TestMethod]
+        public void TestCapacity_ZipperTwice()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            CustomList<int> listFour = new CustomList<int>();
+            CustomList<int> listFive = new CustomList<int>();
+            int expected = 12;
+
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);//doubles to 8
+            listTwo.Add(3);//ct = 5
+            listTwo.Add(5);//6
+            listThree.Zip(listOne, listTwo);
+            listFour.Add(0);//7
+            listFour.Add(1);//8
+            listFour.Add(2);//doubles to 16, ct 9
+            listFour.Add(3);//10
+            listFour.Add(4);//11
+            listFour.Add(5);//12
+            listFive.Zip(listFour, listThree);
+            int actual = listFive.capacity;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
         
 }

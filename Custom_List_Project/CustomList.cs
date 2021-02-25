@@ -138,6 +138,10 @@ namespace Custom_List_Project
           
             
         }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
 //   if ((Convert.ToString(item)) == stringArray[i])
