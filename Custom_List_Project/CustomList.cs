@@ -145,6 +145,19 @@ namespace Custom_List_Project
           
             
         }
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> temp = new CustomList<T>();
+            foreach (T item in listOne._items)
+            {
+                temp.Add(item);
+            }
+            foreach (T item in listTwo._items)
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
         //public override string ToString()
         //{
         //    return base.ToString();
@@ -153,7 +166,7 @@ namespace Custom_List_Project
         //{
         //    yeild return 
         //}
-       
+
     }
 }
 //   if ((Convert.ToString(item)) == stringArray[i])
