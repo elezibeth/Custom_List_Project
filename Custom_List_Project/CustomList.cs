@@ -155,29 +155,29 @@ namespace Custom_List_Project
             }
             return array;
         }
-        //public static T[] Zip(T[]arrayOne, T[]arrayTwo)
-        //{
-        //    int playerOne = arrayOne.Count;
-        //    int evens = playerOne * 2;
-        //    int evenCounter = 0;
-        //    int oddCounter = 1;
-        //    int odds = arrayTwo.Count * 2;
-        //    int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
-        //    T[] arr = new T[arrayLength];
+        public static CustomList<T> Zip(CustomList<T> arrayOne, CustomList<T> arrayTwo)
+        {
+            int playerOne = arrayOne.Count;
+            int evens = playerOne * 2;
+            int evenCounter = 0;
+            int oddCounter = 1;
+            int odds = arrayTwo.Count * 2;
+            int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
+            CustomList<T> arr = new CustomList<T>();
 
-        //    for (int i = 0; i < evens; i += 2)
-        //    {
-        //        arr[i] = arrayOne[evenCounter];
-        //        evenCounter += 1;
-        //    }
-        //    for (int i = 1; i < odds; i += 2)
-        //    {
-        //        arr[i] = arrayTwo[oddCounter];
-        //        oddCounter += 1;
-        //    }
-        //     return arr;
-        //}
-       
+            for (int i = 0; i < evens; i += 2)
+            {
+                arr[i] = arrayOne[evenCounter];
+                evenCounter += 1;
+            }
+            for (int i = 1; i < odds; i += 2)
+            {
+                arr[i] = arrayTwo[oddCounter];
+                oddCounter += 1;
+            }
+            return arr;
+        }
+
 
 
 
