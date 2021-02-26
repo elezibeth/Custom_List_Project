@@ -34,7 +34,7 @@ namespace MethodTests
             list.Add(1);
             // At this point - Count: 5, Capacity: 8
             // Capacity is the property that we use to check the internal array size
-            int actual = list.capacity;//capacity method
+            int actual = list.Capacity;//capacity method
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -202,7 +202,7 @@ namespace MethodTests
             list.Add(5);
             list.Remove(4);
             //capacity should not decrease
-            int actual = list.capacity;
+            int actual = list.Capacity;
 
             Assert.AreEqual(expected, actual);
         }
@@ -493,55 +493,55 @@ namespace MethodTests
 
         //zipper tests
         //capacity increases
+        [TestMethod]
+        public void TestZipperCapacityIncrease()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<T> listThree = new CustomList<T>();
+            int expected = 8;
+
+
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree = Zip(listOne, listTwo);
+            int actual = listThree.Capacity;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //item at even index test
         //[TestMethod]
-        //public void TestZipperCapacityIncrease()
-        //{
-        //    //Assble
-        //    CustomList<int> listOne = new CustomList<int>();
-        //    CustomList<int> listTwo = new CustomList<int>();
-        //    CustomList<int> listThree = new CustomList<int>();
-        //    int expected = 8;
+        // public void TestZipperAtEvenIndex()
+        // {
+        //     //Assble
+        //     CustomList<int> listOne = new CustomList<int>();
+        //     CustomList<int> listTwo = new CustomList<int>();
+        //     CustomList<int> listThree = new CustomList<int>();
+        //     int expected = 2;
 
+        //     //Act
+        //     listOne.Add(0);
+        //     listOne.Add(2);
+        //     listOne.Add(4);
+        //     listTwo.Add(1);
+        //     listTwo.Add(3);
+        //     listTwo.Add(5);
+        //     listThree.Zip(listOne, listTwo);
+        //     int actual = listThree[2];
 
-        //    //Act
-        //    listOne.Add(0);
-        //    listOne.Add(2);
-        //    listOne.Add(4);
-        //    listTwo.Add(1);
-        //    listTwo.Add(3);
-        //    listTwo.Add(5);
-        //    listThree.Zip(listOne, listTwo);
-        //    int actual = listThree.capacity;
-
-
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
-
-        //item at even  index test
-        //[TestMethod]
-        //public void TestZipperAtEvenIndex()
-        //{
-        //    //Assble
-        //    CustomList<int> listOne = new CustomList<int>();
-        //    CustomList<int> listTwo = new CustomList<int>();
-        //    CustomList<int> listThree = new CustomList<int>();
-        //    int expected = 2;
-
-        //    //Act
-        //    listOne.Add(0);
-        //    listOne.Add(2);
-        //    listOne.Add(4);
-        //    listTwo.Add(1);
-        //    listTwo.Add(3);
-        //    listTwo.Add(5);
-        //    listThree.Zip(listOne, listTwo);
-        //    int actual = listThree[2];
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+        //     //Assert
+        //     Assert.AreEqual(expected, actual);
+        // }
         //item at odd index test
         //[TestMethod]
         //public void TestZipperAtOddIndex()

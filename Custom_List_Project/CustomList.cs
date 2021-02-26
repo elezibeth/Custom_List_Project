@@ -11,12 +11,13 @@ namespace Custom_List_Project
     {
         //Member variables has a 
         private int count = 0;
-        public int capacity;
+        private int capacity;
         private T[] _items;
         public int Count => count;
         public int Capacity => capacity;
         private int location;
         public IEnumerator<T> Enumerator;
+        private T[] _zipArray;
 
         public T this[int i]
         {
@@ -205,6 +206,27 @@ namespace Custom_List_Project
             }
             return array;
         }
+        public static T[] Zip(T[]arrayOne, T[]arrayTwo)
+        {
+            int evens = arrayOne.Count * 2;
+            int evenCounter = 0;
+            int oddCounter = 1;
+            int odds = arrayTwo.Count * 2;
+            int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
+            T[] arr = new T[arrayLength];
+
+            for (int i = 0; i < evens; i += 2)
+            {
+                arr[i] = arrayOne[evenCounter];
+                evenCounter += 1;
+            }
+            for (int i = 1; i < odds; i += 2)
+            {
+                arr[i] = arrayTwo[oddCounter];
+                oddCounter += 1;
+            }
+             return arr;
+        }
        
 
 
@@ -218,6 +240,8 @@ namespace Custom_List_Project
         {
             return ((IEnumerable<T>)_items).GetEnumerator();
         }
+        
+       
     }
 }
 //   if ((Convert.ToString(item)) == stringArray[i])
