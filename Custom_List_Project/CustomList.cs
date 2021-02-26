@@ -160,19 +160,43 @@ namespace Custom_List_Project
             }
             return temp;
         }
-        //public override string ToString()
-        //{
+        public override string ToString()
+        {
+            ////Get legnth of string
+            //int stringLength = GetStringLenghth();
+            ////create new string
+            //string returnString
+
+            //create new array of strings
+            string[] arr = new string[capacity];
+            arr = NewStringArray();
+            //GetCount
+            // add all arr strings to one string
+            string returnThisString;
+            int arrCount = arr.Length;
+
+            returnThisString = arr[0 - (arrCount - 1)];
+            return returnThisString;
             
-        //    foreach(T item in _items)
-        //    {
-        //        string thing = Convert.ToString(item);
+
+           
+
+        }
+        private string[] NewStringArray()
+        {
+            string[] array = new string[capacity];
+            for (int i = 0; i < count - 1; i++)
+            {
                 
+                string itemsInArray = Convert.ToString(_items[i]);
+                array[i] = itemsInArray;
                 
-        //    }
-            
-        //}
+            }
+            return array;
+        }
        
-     
+
+
 
         IEnumerator IEnumerable.GetEnumerator()
         {
