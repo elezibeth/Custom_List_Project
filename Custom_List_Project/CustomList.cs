@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Custom_List_Project
 {
-    public class CustomList<T> 
+    public class CustomList<T> : IEnumerable<T>
     {
         //Member variables has a 
         private int count = 0;
@@ -15,7 +16,8 @@ namespace Custom_List_Project
         public int Count => count;
         public int Capacity => capacity;
         private int location;
-        private char[] _char;
+        public IEnumerator<T> Enumerator;
+
         public T this[int i]
         {
             get { return _items[i]; }
@@ -160,13 +162,27 @@ namespace Custom_List_Project
         }
         //public override string ToString()
         //{
-        //    return base.ToString();
+            
+        //    foreach(T item in _items)
+        //    {
+        //        string thing = Convert.ToString(item);
+                
+                
+        //    }
+            
         //}
-        //public IEnumerator<T> GetEnumerator()
-        //{
-        //    yeild return 
-        //}
+       
+     
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            yield return _items.GetEnumerator();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return ((IEnumerable<T>)_items).GetEnumerator();
+        }
     }
 }
 //   if ((Convert.ToString(item)) == stringArray[i])

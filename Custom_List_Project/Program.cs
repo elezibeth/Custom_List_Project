@@ -10,26 +10,30 @@ namespace Custom_List_Project
     {
         static void Main(string[] args)
         {
-            //List<int> listJJ = new List<int>() { 1, 2, 3, 4, 5 };
+            //    List<int> listJJ = new List<int>() { 1, 2, 3, 4, 5 };
 
-            //foreach(int item in listJJ)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            //    foreach (int item in listJJ)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
 
-            //CustomList<int> list = new CustomList<int>();
-            //list.Add(0);
-            //list.Add(1);
-            //list.Add(2);
-            //list.Add(3);
-            //list.Add(4);
+            CustomList<int> list = new CustomList<int>();
+            list.Add(0);
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            foreach (int item in list)
+            {
+                Console.WriteLine(item);
+            }
 
 
             //list[0] = 999999;
+            ////Console.WriteLine(list[0]);
+            //CustomList<char> listChar = new CustomList<char>();
+            //list.Add('h');
             //Console.WriteLine(list[0]);
-            CustomList<char> list = new CustomList<char>();
-            list.Add('h');
-            Console.WriteLine(list[0]);
 
 
             Console.ReadLine();
