@@ -168,24 +168,35 @@ namespace Custom_List_Project
             //string returnString
 
             //create new array of strings
-            string[] arr = new string[capacity];
+            string[] arr = new string[capacity];/////////////////////////////////////////////////////////////////
             arr = NewStringArray();
             //GetCount
             // add all arr strings to one string
-            string returnThisString;
+            
             int arrCount = arr.Length;
+            Text newText = new Text();
+            string returnString = newText.StringBuild(arr);
+            return returnString;
 
-            returnThisString = arr[0 - (arrCount - 1)];
-            return returnThisString;
+            //System.Text.StringBuilder returnString = new System.Text.StringBuilder();
+            //// Create a string of 1000 numbers from 0 to 999    
+            //// separated by a comma and space    
+            //for (int counter = 0; counter <= count; counter++)
+            //{
+            //    returnString.Append(arr[counter]);
+                
+            //}
             
 
-           
+
+
+
 
         }
         private string[] NewStringArray()
         {
             string[] array = new string[capacity];
-            for (int i = 0; i < count - 1; i++)
+            for (int i = 0; i < capacity - 1; i++)
             {
                 
                 string itemsInArray = Convert.ToString(_items[i]);

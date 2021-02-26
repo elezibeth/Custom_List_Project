@@ -425,7 +425,7 @@ namespace MethodTests
             CustomList<int> listThree = new CustomList<int>();
             CustomList<int> listFour = new CustomList<int>();
 
-            string expected = listFour.ToString();
+            
 
 
 
@@ -441,12 +441,14 @@ namespace MethodTests
             listFour.Add(8);
             listFour.Add(7);
             listFour.Add(5);
+            listFour.Add(0);
             listFour.Add(1);
             listFour.Add(3);
             listFour.Add(4);
 
             listThree = listTwo + listOne;
             string actual = listThree.ToString();
+            string expected = listFour.ToString();
 
             //Assert
             Assert.AreEqual(actual, expected);
