@@ -17,7 +17,7 @@ namespace Custom_List_Project
         public int Capacity => capacity;
         private int location;
         public IEnumerator<T> Enumerator;
-        private T[] _zipArray;
+        //private T[] _zipArray;
 
         public T this[int i]
         {
@@ -155,31 +155,6 @@ namespace Custom_List_Project
             }
             return array;
         }
-        public static CustomList<T> Zip(CustomList<T> arrayOne, CustomList<T> arrayTwo)
-        {
-            int playerOne = arrayOne.Count;
-            int evens = playerOne * 2;
-            int evenCounter = 0;
-            int oddCounter = 1;
-            int odds = arrayTwo.Count * 2;
-            int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
-            CustomList<T> arr = new CustomList<T>();
-
-            for (int i = 0; i < evens; i += 2)
-            {
-                arr[i] = arrayOne[evenCounter];
-                evenCounter += 1;
-            }
-            for (int i = 1; i < odds; i += 2)
-            {
-                arr[i] = arrayTwo[oddCounter];
-                oddCounter += 1;
-            }
-            return arr;
-        }
-
-
-
 
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -190,7 +165,129 @@ namespace Custom_List_Project
         {
             return ((IEnumerable<T>)_items).GetEnumerator();
         }
-        
-       
+
+
+        public static CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> arr = new CustomList<T>();
+            int listOneCount = listOne.Count;
+            int listTwoCount = listTwo.Count;
+            int listOneCounter = listOneCount;
+            int listTwoCounter = listTwoCount;
+            arr.Add(listOne[0]);
+            listOneCount--;
+            arr.Add(listTwo[0]);
+            listTwoCount--;
+
+            while (listOneCount != 0 && listTwoCount != 0)
+            {
+             
+                arr.Add(listOne[listOneCounter]);
+                listOneCount--;
+                arr.Add(listTwo[listTwoCounter]);
+                listTwoCount--;
+            }
+            if(listOneCount == 0 && listTwoCount != 0)
+            {
+                for(int i = 0; i < listTwoCount-1; i++)
+                {
+                    arr.Add(listTwo[listTwoCounter]);
+                    
+                }
+
+                
+            }
+            if (listOneCount != 0 && listTwoCount == 0)
+            {
+                for (int i = 0; i < listOneCount-1; i++)
+                {
+                    arr.Add(listOne[listOneCounter]);
+                    
+                }
+               
+
+            }
+            return arr;
+            //public void Zip(CustomList<T> listOne, CustomList<T> listTwo)
+            //{
+            //    //set _items = items in both lists;
+            //    int number = listOne.Count + listTwo.Count;
+
+            //    capacity = number;
+            //    T[] arr = new T[number];
+
+            //    //get items in list one in 0,2,4... indeces
+
+
+            //    int listOneQty = listOne.Count;
+            //    int listOnei = (listOneQty * 2) - 2;
+            //    int listOneIndex = 0;
+            //    int listTwoQty = listTwo.Count;
+            //    int listTwoi = (listTwoQty * 2) - 1;
+            //    int listTwoIndex = 0;
+            //    int listOneCountDown = listOneQty;
+            //    int listTwoCountDown = listTwoQty;
+            //    int iTracker = 0;
+            //    while(listOneCountDown != 0 && listTwoCountDown != 0)
+            //    {
+            //        for (int i = 0; i <= listOnei; i += 2)
+            //        {
+
+            //        arr[i] = listOne[listOneIndex];
+            //        listOneCountDown--;
+            //        listOneIndex++;
+            //        iTracker++;
+
+            //    }
+
+            //    //get items in list two in 0,2,4 etc
+
+            //    for (int i = 1; i <= listTwoi; i += 2)
+            //    {
+            //        arr[i] = listTwo[0];
+            //        listTwoCountDown--;
+            //        listTwoIndex++;
+            //        iTracker++;
+            //    }
+
+            //}
+            //if(listOneCountDown > 0)
+            //{
+
+            //    for (int i = 0; i < listOneCountDown ; i++)
+            //    {
+
+            //        arr[iTracker] = listOne[listOneIndex];
+            //        listOneCountDown--;
+            //        listOneIndex++;
+            //        iTracker++;
+
+            //    }
+            //}
+            //if(listTwoCountDown > 0)
+            //{
+
+            //    for (int i = 0; i < listOneCountDown; i++)
+            //    {
+
+            //        arr[iTracker] = listTwo[listTwoIndex];
+            //        listOneCountDown--;
+            //        listTwoIndex++;
+            //        iTracker++;
+
+            //}
+
+
+            //}
+            //_items = arr;
+
+
+
+        }
+
+
+
+
+
     }
 }

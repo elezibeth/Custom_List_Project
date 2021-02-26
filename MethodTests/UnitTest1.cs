@@ -602,37 +602,38 @@ namespace MethodTests
         //    Assert.AreEqual(expected, actual);
         //}
         //entire list comparer
-        //[TestMethod]
-        //public void TestZipperEntireListCompare()
-        //{
-        //    //Assble
-        //    CustomList<int> listOne = new CustomList<int>();
-        //    CustomList<int> listTwo = new CustomList<int>();
-        //    CustomList<int> listThree = new CustomList<int>();
-        //    CustomList<int> listFour = new CustomList<int>();
-        //    string expected = listFour.ToString();
+        [TestMethod]
+        public void TestZipperEntireListCompare()
+        {
+            //Assble
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> listThree = new CustomList<int>();
+            CustomList<int> listFour = new CustomList<int>();
+            string expected = listFour.ToString();
 
 
-        //    //Act
-        //    listOne.Add(0);
-        //    listOne.Add(2);
-        //    listOne.Add(4);
-        //    listTwo.Add(1);
-        //    listTwo.Add(3);
-        //    listTwo.Add(5);
-        //    listThree.Zip(listOne, listTwo);
-        //    listFour.Add(0);
-        //    listFour.Add(1);
-        //    listFour.Add(2);
-        //    listFour.Add(3);
-        //    listFour.Add(4);
-        //    listFour.Add(5);
-        //    string actual = listThree.ToString();
+            //Act
+            listOne.Add(0);
+            listOne.Add(2);
+            listOne.Add(4);
+            listTwo.Add(1);
+            listTwo.Add(3);
+            listTwo.Add(5);
+            listThree = CustomList<int>.Zip(listOne, listTwo);
+            listFour.Add(0);
+            listFour.Add(1);
+            listFour.Add(2);
+            listFour.Add(3);
+            listFour.Add(4);
+            listFour.Add(5);
+            string actual = listThree.ToString();
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
         //zip twice,  test capacity
+        //capacity read only user story tested here also
         [TestMethod]
         public void TestCapacity_ZipperTwice()
         {
@@ -642,24 +643,24 @@ namespace MethodTests
             CustomList<int> listThree = new CustomList<int>();
             CustomList<int> listFour = new CustomList<int>();
             CustomList<int> listFive = new CustomList<int>();
-            int expected = 12;
+            int expected = 16;
 
 
             //Act
             listOne.Add(0);
             listOne.Add(2);
             listOne.Add(4);
-            listTwo.Add(1);//doubles to 8
+            listTwo.Add(1);//doubles to 8 on next
             listTwo.Add(3);//ct = 5
             listTwo.Add(5);//6
-            listThree = CustomList<int>.Zip(listOne, listTwo);
-            listFour.Add(0);//7
-            listFour.Add(1);//8
-            listFour.Add(2);//doubles to 16, ct 9
-            listFour.Add(3);//10
-            listFour.Add(4);//11
-            listFour.Add(5);//12
-            listFive = CustomList<int>.Zip(listFour, listThree);
+            listThree = CustomList<int>.Zip(listOne, listTwo);//should be 6
+            listFour.Add(0);//1
+            listFour.Add(1);//2
+            listFour.Add(2);//3
+            listFour.Add(3);//14
+            listFour.Add(4);//15
+            listFour.Add(5);//6 - capacity will be 8, but 
+            listFive = CustomList<int>.Zip(listFour, listThree);//6 + 6
             int actual = listFive.Capacity;
 
             //Assert
