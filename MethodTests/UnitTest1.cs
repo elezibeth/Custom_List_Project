@@ -136,7 +136,9 @@ namespace MethodTests
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
+        //[TestMethod] will not run because list.Count is read only
+
+
         //public void CountPropertyIsReadOnly()
         //{
         //    //Assemble
@@ -145,9 +147,9 @@ namespace MethodTests
 
         //    //Action
         //    list.Count = 4;
-                
 
-            
+
+
 
         //    int actual = list.Count;
 
@@ -243,20 +245,30 @@ namespace MethodTests
         [TestMethod]
         public void AddAtIndexNumber()
         {
+            //Arrange
+            CustomList<char> list = new CustomList<char>();
+            char expected = 'x';
 
+            //Action
+            list.Add('r');
+            list[0] = 'x';
+            char actual = list[0];
+
+            Assert.AreEqual(expected, actual);
+            
         }
 
-        [TestMethod]
-        public void RemoveAtIndexNumber()
-        {
+        //[TestMethod]
+        //public void RemoveAtIndexNumber()
+        //{
 
-        }
-        [TestMethod]
-        public void RetrieveAtIndexNumber()
-        {
+        //}
+        //[TestMethod]
+        //public void RetrieveAtIndexNumber()
+        //{
 
 
-        }
+        //}
         //overload + / - operators
 
         //[TestMethod]
@@ -295,7 +307,7 @@ namespace MethodTests
         //    CustomList<string> listTwo = new CustomList<string>();
         //    CustomList<string> listThree = new CustomList<string>();
         //    CustomList<string> listFour = new CustomList<string>();
-            
+
 
         //    //Action
         //    listOne.Add("Hello");
@@ -320,7 +332,7 @@ namespace MethodTests
         //    CustomList<string> listOne = new CustomList<string>();
         //    CustomList<string> listTwo = new CustomList<string>();
         //    CustomList<string> listThree = new CustomList<string>();
-            
+
 
 
         //    //Action
@@ -453,7 +465,7 @@ namespace MethodTests
         //    listTwo.Add(7);
         //    listTwo.Add(5);
 
-        
+
 
         //    listThree = listTwo + listOne;
         //    listFour = listThree - listOne;
@@ -684,32 +696,32 @@ namespace MethodTests
         {
 
         }
-        [TestMethod]
-        public void CapacityIsAProperty()
-        {
-            CustomList<char> list = new CustomList<char>();
-            int expected = 1;
+        //[TestMethod]
+        //public void CapacityIsAProperty()
+        //{
+        //    CustomList<char> list = new CustomList<char>();
+        //    int expected = 1;
 
-            list.Add(I);
-            int actual = list.Capacity;
+        //    list.Add(I);
+        //    int actual = list.Capacity;
 
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void TestToStringMethod()
-        {
-            CustomList<bool> list = new CustomList<bool>();
-            string expected = "truetruetruetrue";
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void TestToStringMethod()
+        //{
+        //    CustomList<bool> list = new CustomList<bool>();
+        //    string expected = "truetruetruetrue";
 
-            list.Add(true);
-            list.Add(true);
-            list.Add(true);
-            list.Add(true);
+        //    list.Add(true);
+        //    list.Add(true);
+        //    list.Add(true);
+        //    list.Add(true);
 
-            string actual = list.ToString();
+        //    string actual = list.ToString();
 
-            Assert.AreEqual(expected, actual);
-        }
+        //    Assert.AreEqual(expected, actual);
+        //}
         
 
 

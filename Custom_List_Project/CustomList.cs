@@ -15,6 +15,7 @@ namespace Custom_List_Project
         public int Count => count;
         public int Capacity => capacity;
         private int location;
+        private char[] _char;
         public T this[int i]
         {
             get { return _items[i]; }
@@ -28,8 +29,6 @@ namespace Custom_List_Project
 
 
 
-    // A read-only static property:
-    // public static int Counter => _counter;
 
 
 
@@ -44,7 +43,8 @@ namespace Custom_List_Project
         }
 
         //Methods can do
-        public void Add(T item)
+     
+        public void Add(T item) 
         {
 
             ResizeArray();
@@ -100,7 +100,7 @@ namespace Custom_List_Project
             
 
 
-            for (int i = 0; i <= (location - 1); i++)
+            for (int i = 0; i <= (location - 1); i++)//rewrite indexer
             {
                 tempArray[i] = _items[i];
             }
@@ -122,7 +122,7 @@ namespace Custom_List_Project
 
         }
 
-        public void FindIndexOfItem(T item)
+        public void FindIndexOfItem(T item)//.Equals method... object method...
         {
             string[] stringArray = new string[capacity];
             for (int i = 0; i < count; i++)
