@@ -709,17 +709,17 @@ namespace MethodTests
         //{
 
         //}
-        //[TestMethod]
-        //public void CapacityIsAProperty()
-        //{
-        //    CustomList<char> list = new CustomList<char>();
-        //    int expected = 1;
+        [TestMethod]
+        public void CapacityIsAProperty()
+        {
+            CustomList<char> list = new CustomList<char>();
+            int expected = 4;
 
-        //    list.Add(I);
-        //    int actual = list.Capacity;
+            list.Add('I');
+            int actual = list.Capacity;
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
         //[TestMethod]
         //public void TestToStringMethod()
         //{
