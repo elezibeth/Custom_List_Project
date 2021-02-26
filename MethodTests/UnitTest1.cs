@@ -668,21 +668,21 @@ namespace MethodTests
 
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void Indexer_AddAt()
-        //{
-        //    CustomList<char> list = new CustomList<char>();
-        //    char expected = a;
+        [TestMethod]
+        public void Indexer_AddAt()
+        {
+            CustomList<char> list = new CustomList<char>();
+            char expected = 'a';
 
 
-        //    list.Add(a);
-        //    list.Add(c);
-        //    list.Add(d);
-        //    list[1] = a;
-        //    char actual = list[1];
+            list.Add('a');
+            list.Add('c');
+            list.Add('d');
+            list[1] = 'a';
+            char actual = list[1];
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
         [TestMethod]
         public void Indexer_RemoveAt()
         {
