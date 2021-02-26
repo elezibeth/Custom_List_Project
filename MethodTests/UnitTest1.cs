@@ -354,7 +354,7 @@ namespace MethodTests
         //    listTwo.Add("How's it goin'?");
 
         //    listThree = listTwo + listOne;
-        //    listThree -= listTwo;
+        //    listThree = listThree - listTwo;
         //    string actual = listThree[4];
 
 
@@ -389,31 +389,31 @@ namespace MethodTests
 
         }
         //count increase
-        //[TestMethod]
-        //public void TestAssignmentOperatorCount()
-        //{
-        //    CustomList<string> listOne = new CustomList<string>();
-        //    CustomList<string> listTwo = new CustomList<string>();
-        //    CustomList<string> listThree = new CustomList<string>();
-        //    int expected = 6;
+        [TestMethod]
+        public void TestAssignmentOperatorCount()
+        {
+            CustomList<string> listOne = new CustomList<string>();
+            CustomList<string> listTwo = new CustomList<string>();
+            CustomList<string> listThree = new CustomList<string>();
+            int expected = 8;
 
 
-        //    //Action
-        //    listOne.Add("Hello");
-        //    listOne.Add("Hi");
-        //    listOne.Add("Hey");
+            //Action
+            listOne.Add("Hello");
+            listOne.Add("Hi");
+            listOne.Add("Hey");
 
-        //    listTwo.Add("What's up?");
-        //    listTwo.Add("How are you?");
-        //    listTwo.Add("How's it goin'?");
+            listTwo.Add("What's up?");
+            listTwo.Add("How are you?");
+            listTwo.Add("How's it goin'?");
 
-        //    listThree = listTwo + listOne;
-        //    int actual = listThree.Count;
+            listThree = listTwo + listOne;
+            int actual = listThree.Count;
 
 
-        //    Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
 
-        //}
+        }
         //entire list plus operator
         //public void TestOverloadPlusOperatorList()
         //{
