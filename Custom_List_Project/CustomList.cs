@@ -148,7 +148,7 @@ namespace Custom_List_Project
         private string[] NewStringArray()
         {
             string[] array = new string[capacity];
-            for (int i = 0; i < capacity - 1; i++)
+            for (int i = 0; i <= capacity - 1; i++)
             {
                 string itemsInArray = Convert.ToString(_items[i]);
                 array[i] = itemsInArray;

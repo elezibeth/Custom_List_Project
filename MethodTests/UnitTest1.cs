@@ -720,21 +720,21 @@ namespace MethodTests
 
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void TestToStringMethod()
-        //{
-        //    CustomList<bool> list = new CustomList<bool>();
-        //    string expected = "truetruetruetrue";
+        [TestMethod]
+        public void TestToStringMethod()
+        {
+            CustomList<bool> list = new CustomList<bool>();
+            string expected = "TrueTrueTrueTrue";
 
-        //    list.Add(true);
-        //    list.Add(true);
-        //    list.Add(true);
-        //    list.Add(true);
+            list.Add(true);
+            list.Add(true);
+            list.Add(true);
+            list.Add(true);
 
-        //    string actual = list.ToString();
+            string actual = list.ToString();
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
 
 
 
