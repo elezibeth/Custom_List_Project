@@ -52,7 +52,8 @@ namespace Custom_List_Project
 
             ResizeArray();
             count = count + 1;
-            _items[count - 1] = item;
+            int index = count - 1;
+            _items[index] = item;
 
         }
         public void ResizeArray()
@@ -72,36 +73,16 @@ namespace Custom_List_Project
                 capacity = newCapacity;
             }
 
-            //public IEnumerator GetEnumerator() from lecture
-            //{
-            //    for(int i = 0; i < count; i++)
-            //    {
-            //        yield return 
-            //    }
-            //}
+           
         }
         //remove method
         public void Remove(T item)
         {
-            //find item in array to remove
-            T[] tempArray = _items;
             
-
-            //copy to temp array
-            //convert to string for each loop on temp array, use case statements
-           
-
-            //if item matches item, return index number of array case 
+            T[] tempArray = _items;
             int indexNumber = -1;
 
             FindIndexOfItem(item);
-
-            //store variable
-            //temp array
-            //copy from index zero to variable containing index # - 1;
-            
-            
-
 
             for (int i = 0; i <= (location - 1); i++)//rewrite indexer
             {
@@ -116,12 +97,6 @@ namespace Custom_List_Project
             count = count - 1;
 
             _items = tempArray;
-
-
-            // copy from index variable +1 to count -1;
-            //_items = temp array
-
-
 
         }
 
@@ -141,16 +116,15 @@ namespace Custom_List_Project
                 {
                     location = i;
                 }
-                
-               
             }
 
-          
-            
         }
         public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> temp = new CustomList<T>();
+            int qty = listOne.Count + listOne.Count;
+            T[] ti = new T[qty];
+            temp._items = ti;
             foreach (T item in listOne._items)
             {
                 temp.Add(item);
@@ -163,70 +137,46 @@ namespace Custom_List_Project
         }
         public override string ToString()
         {
-            ////Get legnth of string
-            //int stringLength = GetStringLenghth();
-            ////create new string
-            //string returnString
 
-            //create new array of strings
-            string[] arr = new string[capacity];/////////////////////////////////////////////////////////////////
+            string[] arr = new string[capacity];
             arr = NewStringArray();
-            //GetCount
-            // add all arr strings to one string
-            
             int arrCount = arr.Length;
             Text newText = new Text();
             string returnString = newText.StringBuild(arr);
             return returnString;
-
-            //System.Text.StringBuilder returnString = new System.Text.StringBuilder();
-            //// Create a string of 1000 numbers from 0 to 999    
-            //// separated by a comma and space    
-            //for (int counter = 0; counter <= count; counter++)
-            //{
-            //    returnString.Append(arr[counter]);
-                
-            //}
-            
-
-
-
-
-
         }
         private string[] NewStringArray()
         {
             string[] array = new string[capacity];
             for (int i = 0; i < capacity - 1; i++)
             {
-                
                 string itemsInArray = Convert.ToString(_items[i]);
                 array[i] = itemsInArray;
-                
             }
             return array;
         }
-        public static T[] Zip(T[]arrayOne, T[]arrayTwo)
-        {
-            int evens = arrayOne.Count * 2;
-            int evenCounter = 0;
-            int oddCounter = 1;
-            int odds = arrayTwo.Count * 2;
-            int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
-            T[] arr = new T[arrayLength];
+        //public static T[] Zip(T[]arrayOne, T[]arrayTwo)
+        //{
+        //    int playerOne = arrayOne.Count;
+        //    int evens = playerOne * 2;
+        //    int evenCounter = 0;
+        //    int oddCounter = 1;
+        //    int odds = arrayTwo.Count * 2;
+        //    int arrayLength = (arrayOne.Capacity + arrayTwo.Capacity);
+        //    T[] arr = new T[arrayLength];
 
-            for (int i = 0; i < evens; i += 2)
-            {
-                arr[i] = arrayOne[evenCounter];
-                evenCounter += 1;
-            }
-            for (int i = 1; i < odds; i += 2)
-            {
-                arr[i] = arrayTwo[oddCounter];
-                oddCounter += 1;
-            }
-             return arr;
-        }
+        //    for (int i = 0; i < evens; i += 2)
+        //    {
+        //        arr[i] = arrayOne[evenCounter];
+        //        evenCounter += 1;
+        //    }
+        //    for (int i = 1; i < odds; i += 2)
+        //    {
+        //        arr[i] = arrayTwo[oddCounter];
+        //        oddCounter += 1;
+        //    }
+        //     return arr;
+        //}
        
 
 
@@ -244,7 +194,3 @@ namespace Custom_List_Project
        
     }
 }
-//   if ((Convert.ToString(item)) == stringArray[i])
-//{
-//    return i;
-//}

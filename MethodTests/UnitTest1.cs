@@ -493,31 +493,31 @@ namespace MethodTests
 
         //zipper tests
         //capacity increases
-        [TestMethod]
-        public void TestZipperCapacityIncrease()
-        {
-            //Assble
-            CustomList<int> listOne = new CustomList<int>();
-            CustomList<int> listTwo = new CustomList<int>();
-            CustomList<T> listThree = new CustomList<T>();
-            int expected = 8;
+        //[TestMethod]
+        //public void TestZipperCapacityIncrease()
+        //{
+        //    //Assble
+        //    CustomList<int> listOne = new CustomList<int>();
+        //    CustomList<int> listTwo = new CustomList<int>();
+        //    CustomList<int> listThree = new CustomList<int>();
+        //    int expected = 8;
 
 
-            //Act
-            listOne.Add(0);
-            listOne.Add(2);
-            listOne.Add(4);
-            listTwo.Add(1);
-            listTwo.Add(3);
-            listTwo.Add(5);
-            listThree = Zip(listOne, listTwo);
-            int actual = listThree.Capacity;
+        //    //Act
+        //    listOne.Add(0);
+        //    listOne.Add(2);
+        //    listOne.Add(4);
+        //    listTwo.Add(1);
+        //    listTwo.Add(3);
+        //    listTwo.Add(5);
+        //    listThree = Zip(listOne, listTwo);
+        //    int actual = listThree.Capacity;
 
 
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
         //item at even index test
         //[TestMethod]
@@ -683,32 +683,32 @@ namespace MethodTests
 
         //    Assert.AreEqual(expected, actual);
         //}
-        //[TestMethod]
-        //public void Indexer_RemoveAt()
-        //{
-        //    CustomList<int> list = new CustomList<int>();
-        //    int expected = 7;
+        [TestMethod]
+        public void Indexer_RemoveAt()
+        {
+            CustomList<int> list = new CustomList<int>();
+            int expected = 7;
 
 
-        //    list.Add(3);
-        //    list.Add(5);
-        //    list.Add(7);
-        //    list.Remove(list[1]);//filo, may fail
-        //    int actual = list[1];
+            list.Add(3);
+            list.Add(5);
+            list.Add(7);
+            list.Remove(list[1]);//filo, may fail
+            int actual = list[1];
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
         //iterable
-        [TestMethod]
-        public void ListIsIterable()
-        {
+        //[TestMethod]
+        //public void ListIsIterable()
+        //{
 
-        }
-        [TestMethod]
-        public void ToStringMethod()
-        {
+        //}
+        //[TestMethod]
+        //public void ToStringMethod()
+        //{
 
-        }
+        //}
         //[TestMethod]
         //public void CapacityIsAProperty()
         //{
@@ -735,7 +735,7 @@ namespace MethodTests
 
         //    Assert.AreEqual(expected, actual);
         //}
-        
+
 
 
     }
