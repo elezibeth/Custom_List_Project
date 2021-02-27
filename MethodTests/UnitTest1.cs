@@ -610,7 +610,7 @@ namespace MethodTests
             CustomList<int> listTwo = new CustomList<int>();
             CustomList<int> listThree = new CustomList<int>();
             CustomList<int> listFour = new CustomList<int>();
-            string expected = listFour.ToString();
+           
 
 
             //Act
@@ -620,13 +620,14 @@ namespace MethodTests
             listTwo.Add(1);
             listTwo.Add(3);
             listTwo.Add(5);
-            listThree = CustomList<int>.Zip(listOne, listTwo);
+            listThree = CustomList<int>.Zip(listOne, listTwo); //will output 8 chars to string
             listFour.Add(0);
             listFour.Add(1);
             listFour.Add(2);
             listFour.Add(3);
             listFour.Add(4);
-            listFour.Add(5);
+            listFour.Add(5);//6.. will output 8 chars to string
+            string expected = listFour.ToString();
             string actual = listThree.ToString();
 
             //Assert

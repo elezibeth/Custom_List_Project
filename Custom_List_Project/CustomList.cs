@@ -170,44 +170,83 @@ namespace Custom_List_Project
         public static CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> arr = new CustomList<T>();
-            int listOneCount = listOne.Count;
-            int listTwoCount = listTwo.Count;
-            int listOneCounter = listOneCount;
-            int listTwoCounter = listTwoCount;
-            arr.Add(listOne[0]);
-            listOneCount--;
-            arr.Add(listTwo[0]);
-            listTwoCount--;
-
-            while (listOneCount != 0 && listTwoCount != 0)
+            if(listOne.Count > listTwo.Count)
             {
-             
-                arr.Add(listOne[listOneCounter]);
-                listOneCount--;
-                arr.Add(listTwo[listTwoCounter]);
-                listTwoCount--;
-            }
-            if(listOneCount == 0 && listTwoCount != 0)
-            {
-                for(int i = 0; i < listTwoCount-1; i++)
+                int remnants = listOne.Count - listTwo.Count;
+                int listTwoCount = listTwo.count;
+                for(int i = 0; i < listTwoCount; i++)
                 {
-                    arr.Add(listTwo[listTwoCounter]);
-                    
+                    arr.Add(listOne[i]);
+                    arr.Add(listTwo[i]);
+                }
+                for(int i = remnants - 1; i < remnants - 1; i++)
+                {
+                    arr.Add(listOne[i]);
                 }
 
-                
             }
-            if (listOneCount != 0 && listTwoCount == 0)
+            if(listTwo.Count > listOne.Count)
             {
-                for (int i = 0; i < listOneCount-1; i++)
+                int remnants = listTwo.Count - listOne.Count;
+                int listOneCount = listOne.count;
+                for (int i = 0; i < listOneCount; i++)
                 {
-                    arr.Add(listOne[listOneCounter]);
-                    
+                    arr.Add(listOne[i]);
+                    arr.Add(listTwo[i]);
                 }
-               
-
+                for (int i = remnants - 1; i < remnants - 1; i++)
+                {
+                    arr.Add(listTwo[i]);
+                }
+            }
+            if(listOne.Count == listTwo.Count)
+            {
+                int listOneCount = listOne.count;
+                for (int i = 0; i < listOneCount; i++)
+                {
+                    arr.Add(listOne[i]);
+                    arr.Add(listTwo[i]);
+                }
             }
             return arr;
+            //int listOneCount = listOne.Count;
+            //int listTwoCount = listTwo.Count;
+            //int listOneCounter = listOneCount;
+            //int listTwoCounter = listTwoCount;
+            //arr.Add(listOne[0]);
+            //listOneCount--;
+            //arr.Add(listTwo[0]);
+            //listTwoCount--;
+
+            //while (listOneCount != 0 && listTwoCount != 0)
+            //{
+             
+            //    arr.Add(listOne[listOneCounter]);
+            //    listOneCount--;
+            //    arr.Add(listTwo[listTwoCounter]);
+            //    listTwoCount--;
+            //}
+            //if(listOneCount == 0 && listTwoCount != 0)
+            //{
+            //    for(int i = 0; i < listTwoCount-1; i++)
+            //    {
+            //        arr.Add(listTwo[listTwoCounter]);
+                    
+            //    }
+
+                
+            //}
+            //if (listOneCount != 0 && listTwoCount == 0)
+            //{
+            //    for (int i = 0; i < listOneCount-1; i++)
+            //    {
+            //        arr.Add(listOne[listOneCounter]);
+                    
+            //    }
+               
+
+            //}
+            //return arr;
             //public void Zip(CustomList<T> listOne, CustomList<T> listTwo)
             //{
             //    //set _items = items in both lists;
